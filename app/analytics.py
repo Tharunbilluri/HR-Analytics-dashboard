@@ -255,8 +255,7 @@ def insight_satisfaction(df: pd.DataFrame) -> str:
 def insight_job_roles(df: pd.DataFrame, min_count: int = 10) -> str:
     roles = (
         df.groupby("JobRole")["Attrition"]
-        .agg(["mean", "count"])
-        .rename(columns={"mean": "rate"})
+        .agg(rate=lambda x: (x == "Yes").mean(), count="count")
     )
     roles = roles[roles["count"] >= min_count].sort_values("rate", ascending=False)
     if roles.empty:
@@ -618,29 +617,6 @@ def top_priorities_section_html(df: pd.DataFrame) -> str:
     """
 
 
-def executive_brief_html(
-    df: pd.DataFrame,
-    df_company: pd.DataFrame | None = None,
-    cost_multiplier: float = DEFAULT_COST_MULTIPLIER_MONTHS,
-    ctx: FilterContext | None = None,
-) -> str:
-    """Full brief (legacy combined block)."""
-    return (
-        executive_summary_section_html(df, ctx, df_company, cost_multiplier)
-        + business_impact_section_html(df, cost_multiplier)
-        + top_priorities_section_html(df)
-    )
-
-
-def executive_summary_html(
-    df: pd.DataFrame,
-    df_company: pd.DataFrame,
-    cost_multiplier: float = DEFAULT_COST_MULTIPLIER_MONTHS,
-) -> str:
-    """Alias for executive brief (backward compatible)."""
-    return executive_brief_html(df, df_company, cost_multiplier)
-
-
 def model_selection_rationale() -> str:
     return (
         "**Production model: Random Forest** — best accuracy (82.7%) for workforce screening. "
@@ -740,8 +716,3 @@ def build_executive_report_markdown(
         ]
     )
     return "\n".join(lines)
-
-
-def build_executive_summary_markdown(df: pd.DataFrame) -> str:
-    """Alias for full-company report export."""
-    return build_executive_report_markdown(df)

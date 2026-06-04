@@ -9,7 +9,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 import pandas as pd  # noqa: E402
 
-from app.analytics import build_executive_summary_markdown  # noqa: E402
+from app.analytics import build_executive_report_markdown  # noqa: E402
 from app.utils import load_employee_data  # noqa: E402
 
 
@@ -40,7 +40,7 @@ def main():
     docs = PROJECT_ROOT / "docs"
     docs.mkdir(exist_ok=True)
     (docs / "EXECUTIVE_SUMMARY.md").write_text(
-        build_executive_summary_markdown(df), encoding="utf-8"
+        build_executive_report_markdown(df), encoding="utf-8"
     )
     (docs / "SQL_RESULTS.md").write_text(sql_snapshot(df), encoding="utf-8")
     print(f"Wrote {docs / 'EXECUTIVE_SUMMARY.md'}")

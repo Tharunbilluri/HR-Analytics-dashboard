@@ -325,28 +325,6 @@ def streamlit_custom_css() -> str:
         color: {PRIMARY} !important;
     }}
 
-    .prediction-leave {{
-        background: #FBF0EE;
-        border: 2px solid {LEAVE};
-        border-radius: 12px;
-        padding: 1.25rem;
-        text-align: center;
-        color: {TEXT_PRIMARY};
-    }}
-
-    .prediction-leave h2 {{ color: #A84F42; margin: 0; }}
-
-    .prediction-stay {{
-        background: #EDF7F5;
-        border: 2px solid {STAY};
-        border-radius: 12px;
-        padding: 1.25rem;
-        text-align: center;
-        color: {TEXT_PRIMARY};
-    }}
-
-    .prediction-stay h2 {{ color: #2D7268; margin: 0; }}
-
     .stButton > button[kind="primary"] {{
         background: {PRIMARY} !important;
         color: white !important;

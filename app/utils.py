@@ -356,22 +356,6 @@ def plot_education_attrition(df: pd.DataFrame):
     return apply_chart_style(fig, height=420)
 
 
-def plot_tenure_vs_attrition(df: pd.DataFrame):
-    plot_df = df.copy()
-    plot_df["Status"] = _label_attrition(plot_df["Attrition"])
-    fig = px.box(
-        plot_df,
-        x="Status",
-        y="YearsAtCompany",
-        color="Status",
-        title="Tenure (Years at Company) by Status",
-        color_discrete_map=ATTRITION_COLORS,
-        labels={"YearsAtCompany": "Years at Company", "Status": ""},
-    )
-    fig.update_layout(showlegend=False, xaxis_title="")
-    return apply_chart_style(fig, height=400)
-
-
 def plot_feature_importance(importance_df: pd.DataFrame, top_n: int = 10):
     top = importance_df.head(top_n).sort_values("importance").copy()
     top["label"] = top["feature"].map(lambda f: FEATURE_LABELS.get(f, f))
@@ -449,25 +433,3 @@ def plot_attrition_risk_matrix(df: pd.DataFrame):
         yaxis_title="Attrition %",
     )
     return apply_chart_style(fig, height=400)
-
-
-def plot_department_priority(df: pd.DataFrame):
-    """Alias for attrition risk matrix."""
-    return plot_attrition_risk_matrix(df)
-
-
-def format_display_table(df: pd.DataFrame) -> pd.DataFrame:
-    """Human-readable column names for the data table."""
-    out = df.copy()
-    rename = {
-        "JobRole": "Job Role",
-        "MonthlyIncome": "Monthly Income",
-        "YearsAtCompany": "Years at Company",
-        "OverTime": "Overtime",
-        "JobSatisfaction": "Job Satisfaction (1-4)",
-        "Attrition": "Left Company",
-    }
-    out = out.rename(columns=rename)
-    if "Left Company" in out.columns:
-        out["Left Company"] = _label_attrition(out["Left Company"])
-    return out

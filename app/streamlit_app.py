@@ -598,12 +598,6 @@ def page_prediction(df_ref: pd.DataFrame) -> None:
 
             res_col1, res_col2 = st.columns([1, 1])
             with res_col1:
-                css_class = "prediction-leave" if "Leave" in label else "prediction-stay"
-                st.markdown(
-                    f'<div class="{css_class}"><h2>{label}</h2>'
-                    f"<p>Risk tier: <strong>{tier}</strong></p></div>",
-                    unsafe_allow_html=True,
-                )
                 st.markdown("**Key drivers**")
                 for name, detail in drivers:
                     st.markdown(f"- **{name}** — {detail}")
