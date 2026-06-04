@@ -8,11 +8,19 @@ The full project is committed locally on branch `main`. GitHub currently has onl
 
 ```bash
 cd "/Users/varunbilluri/HR Analytics dashboard/hr_analytics_project"
-gh auth login
+./push-to-github.sh
+```
+
+Or manually:
+
+```bash
+gh auth login -h github.com -p https -w   # sign in as Tharunbilluri
+gh auth setup-git
+git remote set-url origin https://github.com/Tharunbilluri/HR-Analytics-dashboard.git
 git push -u origin main --force
 ```
 
-Sign in as **Tharunbilluri** when prompted.
+Sign in as **Tharunbilluri** when prompted. Do not use SSH unless that key is added to the Tharunbilluri account (this machine’s SSH key is linked to another user).
 
 ## Option B — HTTPS + personal access token
 
