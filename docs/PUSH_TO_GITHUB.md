@@ -7,7 +7,7 @@ The full project is committed locally on branch `main`. GitHub currently has onl
 ## Option A — GitHub CLI (recommended)
 
 ```bash
-cd "/Users/varunbilluri/HR Analytics dashboard/hr_analytics_project"
+cd hr_analytics_project   # from your project folder
 ./push-to-github.sh
 ```
 
@@ -20,7 +20,7 @@ git remote set-url origin https://github.com/Tharunbilluri/HR-Analytics-dashboar
 git push -u origin main --force
 ```
 
-Sign in as **Tharunbilluri** when prompted. Do not use SSH unless that key is added to the Tharunbilluri account (this machine’s SSH key is linked to another user).
+Sign in as **Tharunbilluri** when prompted. Prefer HTTPS + `gh auth setup-git` so commits appear under your account.
 
 ## Option B — HTTPS + personal access token
 
@@ -28,7 +28,7 @@ Sign in as **Tharunbilluri** when prompted. Do not use SSH unless that key is ad
 2. Run:
 
 ```bash
-cd "/Users/varunbilluri/HR Analytics dashboard/hr_analytics_project"
+cd hr_analytics_project
 git remote set-url origin https://github.com/Tharunbilluri/HR-Analytics-dashboard.git
 git push -u origin main --force
 ```
