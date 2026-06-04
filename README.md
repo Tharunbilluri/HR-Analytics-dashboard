@@ -198,3 +198,4 @@ This project demonstrates the full analyst workflow: **business question → SQL
 ## License
 
 IBM synthetic HR dataset per [Kaggle terms](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset). Project code for portfolio and learning use.
+# HR-Analytics-dashboard
