@@ -1,0 +1,76 @@
+-- Schema for IBM HR Employee Attrition dataset
+-- Compatible with MySQL 8+ and PostgreSQL 12+
+
+-- MySQL
+CREATE TABLE IF NOT EXISTS employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    age INT NOT NULL,
+    attrition VARCHAR(3) NOT NULL,
+    business_travel VARCHAR(20),
+    daily_rate INT,
+    department VARCHAR(50),
+    distance_from_home INT,
+    education INT,
+    education_field VARCHAR(50),
+    environment_satisfaction INT,
+    gender VARCHAR(10),
+    hourly_rate INT,
+    job_involvement INT,
+    job_level INT,
+    job_role VARCHAR(50),
+    job_satisfaction INT,
+    marital_status VARCHAR(20),
+    monthly_income INT,
+    monthly_rate INT,
+    num_companies_worked INT,
+    over_time VARCHAR(3),
+    percent_salary_hike INT,
+    performance_rating INT,
+    relationship_satisfaction INT,
+    stock_option_level INT,
+    total_working_years INT,
+    training_times_last_year INT,
+    work_life_balance INT,
+    years_at_company INT,
+    years_in_current_role INT,
+    years_since_last_promotion INT,
+    years_with_curr_manager INT
+);
+
+-- PostgreSQL alternative (uncomment and use instead of MySQL block above):
+/*
+CREATE TABLE IF NOT EXISTS employees (
+    id SERIAL PRIMARY KEY,
+    age INTEGER NOT NULL,
+    attrition VARCHAR(3) NOT NULL,
+    business_travel VARCHAR(20),
+    daily_rate INTEGER,
+    department VARCHAR(50),
+    distance_from_home INTEGER,
+    education INTEGER,
+    education_field VARCHAR(50),
+    environment_satisfaction INTEGER,
+    gender VARCHAR(10),
+    hourly_rate INTEGER,
+    job_involvement INTEGER,
+    job_level INTEGER,
+    job_role VARCHAR(50),
+    job_satisfaction INTEGER,
+    marital_status VARCHAR(20),
+    monthly_income INTEGER,
+    monthly_rate INTEGER,
+    num_companies_worked INTEGER,
+    over_time VARCHAR(3),
+    percent_salary_hike INTEGER,
+    performance_rating INTEGER,
+    relationship_satisfaction INTEGER,
+    stock_option_level INTEGER,
+    total_working_years INTEGER,
+    training_times_last_year INTEGER,
+    work_life_balance INTEGER,
+    years_at_company INTEGER,
+    years_in_current_role INTEGER,
+    years_since_last_promotion INTEGER,
+    years_with_curr_manager INTEGER
+);
+*/

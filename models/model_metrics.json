@@ -1,0 +1,91 @@
+{
+  "models": {
+    "Logistic Regression": {
+      "accuracy": 0.7517,
+      "precision": 0.3673,
+      "recall": 0.766,
+      "f1_score": 0.4966,
+      "confusion_matrix": [
+        [
+          185,
+          62
+        ],
+        [
+          11,
+          36
+        ]
+      ]
+    },
+    "Random Forest": {
+      "accuracy": 0.8265,
+      "precision": 0.4286,
+      "recall": 0.2553,
+      "f1_score": 0.32,
+      "confusion_matrix": [
+        [
+          231,
+          16
+        ],
+        [
+          35,
+          12
+        ]
+      ]
+    }
+  },
+  "best_model": "Random Forest",
+  "train_size": 1176,
+  "test_size": 294,
+  "top_features": [
+    {
+      "feature": "MonthlyIncome",
+      "importance": 0.07301612045749695,
+      "rank": 1
+    },
+    {
+      "feature": "Age",
+      "importance": 0.0689379234745927,
+      "rank": 2
+    },
+    {
+      "feature": "TotalWorkingYears",
+      "importance": 0.05492807808685546,
+      "rank": 3
+    },
+    {
+      "feature": "DailyRate",
+      "importance": 0.054352369476078986,
+      "rank": 4
+    },
+    {
+      "feature": "OverTime",
+      "importance": 0.04973775821284486,
+      "rank": 5
+    },
+    {
+      "feature": "YearsAtCompany",
+      "importance": 0.04802539459536087,
+      "rank": 6
+    },
+    {
+      "feature": "HourlyRate",
+      "importance": 0.04722677212862567,
+      "rank": 7
+    },
+    {
+      "feature": "DistanceFromHome",
+      "importance": 0.045605223213016695,
+      "rank": 8
+    },
+    {
+      "feature": "MonthlyRate",
+      "importance": 0.045183124141951234,
+      "rank": 9
+    },
+    {
+      "feature": "YearsWithCurrManager",
+      "importance": 0.04277958859084275,
+      "rank": 10
+    }
+  ]
+}
